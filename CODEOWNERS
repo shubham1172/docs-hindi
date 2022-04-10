@@ -1,5 +1,4 @@
 # This file is described here:  https://help.github.com/en/articles/about-code-owners
 
-# Global Owners: These are Brigadecore org maintainers + maintainers of this repo
-* @Brigadecore/maintainers @Brigadecore/docs-hindi-maintainers
-
+# Global Owners: These are brigadecore org maintainers + specific outside collaborators
+* @brigadecore/maintainers @a-muk @shubham1172
