@@ -75,7 +75,7 @@ $ chmod +x /usr/local/bin/brig
 
 ```powershell
 > mkdir -force $env:USERPROFILE\bin
-> (New-Object Net.WebClient).DownloadFile ("https://github.com/brigadecore/brigade/releases/download/v2.3.1/brig-windows-amd64.exe", "$ENV:USERPROFILE\bin\brig.exe")
+> (New-Object Net.WebClient).DownloadFile("https://github.com/brigadecore/brigade/releases/download/v2.3.1/brig-windows-amd64.exe", "$ENV:USERPROFILE\bin\brig.exe")
 > $env:PATH+=";$env:USERPROFILE\bin"
 ```
 ऊपर दी गई स्क्रिप्ट `brig.exe` डाउनलोड करती है और इसे वर्तमान सत्र के लिए आपके `PATH` में जोड़ती है। निम्नलिखित पंक्ति को अपने [पावरशेल प्रोफाइल](https://www.howtogeek.com/126469/how-to-create-a-powershell-profile/) में जोड़ें।
@@ -200,18 +200,18 @@ $ brig login --insecure --server https://localhost:8443 --root --password "${API
       brigade.ts: |
         import { events, Job } from "@brigadecore/brigadier"
         
-        // Use events.on () to define how your script responds to different events. 
+        // Use events.on() to define how your script responds to different events. 
         // The example below depicts handling of "exec" events originating from
         // the Brigade CLI.
         
-        events.on ("brigade.sh/cli", "exec", async event => {
-            let job = new Job ("hello", "debian:latest", event)
+        events.on("brigade.sh/cli", "exec", async event => {
+            let job = new Job("hello", "debian:latest", event)
             job.primaryContainer.command = ["echo"]
             job.primaryContainer.arguments = ["Hello, World!"]
-            await job.run ()
+            await job.run()
         })
 
-        events.process ()
+        events.process()
     ```
 
 1. पिछली कमांड ने केवल एक टेम्पलेट से एक प्रोजेक्ट परिभाषा उत्पन्न की। हमे
